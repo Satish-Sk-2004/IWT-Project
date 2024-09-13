@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="student.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Profile</h1>
+            <nav>
+                <a href="faculty4.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to List</a>
+            </nav>
+        </header>
+        <main>
+            <section class="student-info">
+                <div class="student-photo">
+                    <img src="f1wards/steve.jpeg" alt="Student Name">
+                </div>
+                <div class="student-details">
+                    <h2>Steve Harrington</h2>
+                    <p><strong>Student ID:</strong> 2215046</p>
+                    <p><strong>Age:</strong> 20</p>
+                    <p><strong>Major:</strong> information Technology</p>
+                    <p><strong>Email:</strong> steveharrington@gmail.com</p>
+                    <p><strong>Phone:</strong> 95009 30042</p>
+                </div>
+            </section>
+            <section class="achievements">
+                <h3>Achievements</h3>
+                <form id="achievement-form">
+                    <input type="text" id="achievement-name" placeholder="Achievement Name" required>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="certificate-file" accept=".pdf,.jpg,.png" required>
+                        <label for="certificate-file" class="file-upload-btn">Choose File</label>
+                        <span class="file-name"></span>
+                    </div>
+                    <button type="submit">Add Achievement</button>
+                </form>
+                <table id="achievements-table">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Achievement Name</th>
+                            <th>Proof</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Achievements will be added here dynamically -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <div id="certificate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="certificate-image" src="" alt="Certificate">
+        </div>
+    </div>
+    <script src="student.js"></script>
+</body>
+</html>

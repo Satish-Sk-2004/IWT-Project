@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Details</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Faculty</div>
+        <nav>
+            <a href="">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="">AboutUs</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+    <div class="maindiv">
+    <div class="slider">
+        <div class="item">
+            <img src="f1wards/vishwa.jpg" alt="Vishwa R">
+            <a class="fac-name" href="faculty1.html">Vishwa R</a>
+            <div class="box2">
+                <p>Professor of DSA</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="f2wards/alex.jpeg" alt="Alex S">
+            <a class="fac-name" href="faculty2.html">Alex S</a>
+            <div class="box2">
+              <p>Professor of AI</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="f3wards/akhil.jpeg" alt="Akhil R">
+            <a class="fac-name" href="faculty3.html">Akhil R</a>
+            <div class="box2">
+                <p>Professor of Data Analysis</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="f4wards/sumanraj.jpeg" alt="Sumanraj P">
+            <a class="fac-name" href="faculty4.html">Sumanraj P</a>
+            <div class="box2">
+                <p>Professor of Web Tech</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="sarathy.jpeg" alt="Sarathy M">
+            <h1>Sarathy M</h1>
+            <div class="box2">
+                <p>Professor of Full Stack Dev</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="kaada.jpeg" alt="Krishnan M">
+            <h1>Krishnan M</h1>
+            <div class="box2">
+                <p>Professor of Power BI</p>
+            </div>
+        </div>
+
+        <button id="next">></button>
+        <button id="prev"><</button>
+    </div>
+</div>
+    <div class="sec">
+        <div>
+        <h1>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, praesentium? Aliquid, cupiditate amet quos exercitationem ullam, rerum aspernatur ipsum non maxime veritatis quo consectetur perspiciatis doloremque quisquam obcaecati, expedita similique.</p>
+        </div>
+    </div>
+
+    <!-- Footer added here -->
+    <footer>
+        <p>&copy; 2024 Faculty Slider. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let items = document.querySelectorAll('.slider .item');
+        let next = document.getElementById('next');
+        let prev = document.getElementById('prev');
+
+        let active = 0; // Start at the first slide (0 index)
+
+        function loadShow() {
+            let stt = 0;
+            items[active].style.transform = `none`;
+            items[active].style.zIndex = 1;
+            items[active].style.filter = 'none';
+            items[active].style.opacity = 1;
+
+            // Next slides
+            for (let i = active + 1; i < items.length; i++) {
+                stt++;
+                items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(0deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+            }
+
+            // Previous slides
+            stt = 0;
+            for (let i = active - 1; i >= 0; i--) {
+                stt++;
+                items[i].style.transform = `translateX(${-150 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(0deg)`;
+                items[i].style.zIndex = -stt;
+                items[i].style.filter = 'blur(5px)';
+                items[i].style.opacity = stt > 2 ? 0 : 0.6;
+            }
+        }
+
+        loadShow();
+
+        next.onclick = function () {
+            active = (active + 1) % items.length; // Loop around to the first slide
+            loadShow();
+        }
+
+        prev.onclick = function () {
+            active = (active - 1 + items.length) % items.length; // Loop around to the last slide
+            loadShow();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') {
+                // Right arrow key pressed
+                next.click();
+            } else if (event.key === 'ArrowLeft') {
+                // Left arrow key pressed
+                prev.click();
+            }
+        });
+    </script>
+</body>
+</html>

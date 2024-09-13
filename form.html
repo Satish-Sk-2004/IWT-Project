@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Validation Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>New Student</h2>
+        <form action="#" method="post" id="staffForm">
+            <label for="staffName">Student Name:</label>
+            <input type="text" id="staffName" name="staffName" required>
+            
+            <label for="subject">Gender</label>
+            <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Java">Male</option>
+                <option value="IWT">Female</option>
+            </select>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="year">Year:</label>
+            <div class="radio-container">
+                <input type="radio" id="1stYear" name="year" value="1st Year" required>
+                <label for="1stYear">1st</label>
+                <input type="radio" id="2ndYear" name="year" value="2nd Year" required>
+                <label for="2ndYear">2nd</label>
+                <input type="radio" id="3rdYear" name="year" value="3rd Year" required>
+                <label for="3rdYear">3rd</label>
+                <input type="radio" id="4thYear" name="year" value="4th Year" required>
+                <label for="4thYear">4th</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">Agree to the Terms & Conditions</label>
+            </div>
+            <div>
+                <a href="faculty1.html"><input type="submit" value="Submit"></a>
+            </div>
+        </form>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
