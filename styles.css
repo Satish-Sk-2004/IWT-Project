@@ -1,68 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
-*{
-    box-sizing: border-box;
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-body{
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.5;
+
+body {
+    line-height: 1.6;
+    color: #333;
 }
-.contact-bg{
-    height: 40vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(/vecteezy_contact-us-word-with-wooden-cubes_4977252.jpg);
-    background-position: 50% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+main {
+    margin-top: 60px;
+}
+
+#home {
+    background-color: #ecf0f1;
+    padding: 4rem 0;
     text-align: center;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-.contact-bg h3{
-    font-size: 1.3rem;
-    font-weight: 400;
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
 }
-.contact-bg h2{
-    font-size: 3rem;
-    text-transform: uppercase;
-    padding: 0.4rem 0;
-    letter-spacing: 4px;
+
+#faculty {
+    background-color: #fff;
+    padding: 4rem 0;
 }
-.line div{
-    margin: 0 0.2rem;
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
-.line div:nth-child(1),
-.line div:nth-child(3){
-    height: 3px;
-    width: 70px;
-    background-image: 
-    linear-gradient(
-        to top right, #0f7db4eb, rgba(37, 211, 211, 0.679) 
-    );    border-radius: 5px;
+
+.faculty-card {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
-.line{
-    display: flex;
-    align-items: center;
+
+.faculty-card:hover {
+    transform: translateY(-5px);
 }
-.line div:nth-child(2){
-    width: 10px;
-    height: 10px;
-    background-image: 
-    linear-gradient(
-        to top right, #00aaffeb, rgb(0, 153, 255) 
-    );    border-radius: 50%;
+
+.faculty-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
-.text{
-    font-weight: 300;
-    opacity: 0.9;
+
+.faculty-card h3 {
+    padding: 1rem;
+    text-align: center;
 }
-.contact-bg .text{
-    margin: 1.6rem 0;
+
+#about, #contact, #faq {
+    padding: 4rem 0;
 }
+
+#faq{
+    padding-bottom: 0%;
+}
+
+.faq-con{
+    padding-bottom: 20px;
+}
+
+.cont-con h2{
+    padding-top: 30px;
+}
+
+.container h2, .container h4{     
+    text-align: center;
+}
+
 .contact-body{
     max-width: 1320px;
     margin: 0 auto;
@@ -83,7 +136,7 @@ body{
 .contact-info span .fas{
     font-size: 2rem;
     padding-bottom: 0.9rem;
-    color: #f7327a;
+    color: #2c3e50;
 }
 .contact-info div span:nth-child(2){
     font-weight: 500;
@@ -124,7 +177,7 @@ body{
     color: #fff;
     background-image: 
     linear-gradient(
-        to top right, #0f7db4eb, rgba(37, 211, 211, 0.679) 
+        to top right, #072e42eb, rgba(27, 82, 113, 0.679) ,#072e42eb
     );    border: none;
     border-radius: 5px;
     padding: 0.7rem 1.5rem;
@@ -143,7 +196,7 @@ body{
 }
 .contact-footer{
     padding: 2rem 0;
-    background: #000;
+    background: #2c3e50;
 }
 .contact-footer h3{
     font-size: 1.3rem;
@@ -169,9 +222,49 @@ body{
     transition: all 0.4s ease;
 }
 .social-links a:hover{
-    color: #f7327a;
-    border-color: #f7327a;
+    box-shadow: #fff 0px 0px 10px 0px;
 }
+
+#about, #faq {
+    background-color: #ecf0f1;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+a{
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+}
+
 
 @media screen and (min-width: 768px){
     .contact-bg .text{

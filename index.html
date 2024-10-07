@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <h1>Welcome to Our Faculty Management System</h1>
+                <p>Discover our exceptional faculty and explore the wealth of knowledge they bring to our institution.</p>
+            </div>
+        </section>
+
+        <section id="faculty">
+            <div class="container">
+                <h2>Our Faculty</h2>
+                <div class="faculty-grid">
+                    <div class="faculty-card" >
+                        <a href="students.html"><img src="./images/jane.jpeg" alt="Dr. Jane Smith">
+                        <h3>Dr. Jane Smith</h3></a>
+                    </div>
+                    <div class="faculty-card">
+                        <a href="students.html"><img src="./images/vishwa.jpg" alt="Prof. John Doe">
+                        <h3>Prof. John Doe</h3></a>
+                    </div>
+                    <div class="faculty-card">
+                        <a href="students.html"><img src="./images/Max.jpeg" alt="Dr. Emily Brown">
+                        <h3>Dr. Emily Brown</h3></a>
+                    </div>
+                    <div class="faculty-card">
+                        <a href="students.html"><img src="./images/steve.jpeg" alt="Prof. Michael Johnson">
+                        <h3>Prof. Michael Johnson</h3></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Our faculty management system is designed to showcase the exceptional talent and expertise of our academic staff. We are committed to fostering an environment of excellence in teaching and research.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container cont-con">    
+                <h2>Contact Us</h2>
+                <h4>If you have any questions or inquiries, please don't hesitate to reach out to us:</h4>
+            </div>
+            <div class = "contact-body">
+                <div class = "contact-info">
+                  <div>
+                    <span><i class = "fas fa-mobile-alt"></i></span>
+                    <span>Phone No.</span>
+                    <span class = "text">2392-23928-2</span>
+                  </div>
+                  <div>
+                    <span><i class = "fas fa-envelope-open"></i></span>
+                    <span>E-mail</span>
+                    <span class = "text">mail@company.com</span>
+                  </div>
+                  <div>
+                    <span><i class = "fas fa-map-marker-alt"></i></span>
+                    <span>Address</span>
+                    <span class = "text">K.R.Nagar, Kovilpatti,Thoothukudi</span>
+                  </div>
+                  <div>
+                    <span><i class = "fas fa-clock"></i></span>
+                    <span>Opening Hours</span>
+                    <span class = "text">Monday - Saturday (9:00 AM to 5:00 PM)</span>
+                  </div>
+                </div>
+        
+                <div class = "contact-form">
+                  <form>
+                    <div>
+                      <input type = "text" class = "form-control" placeholder="First Name">
+                      <input type = "text" class = "form-control" placeholder="Last Name">
+                    </div>
+                    <div>
+                      <input type = "email" class = "form-control" placeholder="E-mail">
+                      <input type = "text" class = "form-control" placeholder="Phone">
+                    </div>
+                    <textarea rows = "5" placeholder="Message" class = "form-control"></textarea>
+                    <input type = "submit" class = "send-btn" value = "send message">
+                  </form>
+        
+                  <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.0677252633163!2d77.82958753927426!3d9.148356287147324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06ae08c6794e85%3A0xea30f98dcb16c4f5!2sNational%20Engineering%20College!5e0!3m2!1sen!2sin!4v1722772301152!5m2!1sen!2sin" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <section id="faq">
+            <div class="container faq-con">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <p class="faq-question">How can I contact a faculty member?</p>
+                    <p class="faq-answer">You can find contact information for each faculty member on their individual profile pages.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">What are the office hours for faculty members?</p>
+                    <p class="faq-answer">Office hours vary by faculty member. Please check their individual profile pages or contact the department for specific information.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">How can I apply to join the faculty?</p>
+                    <p class="faq-answer">For information on faculty positions and application procedures, please visit our Careers page or contact the Human Resources department.</p>
+                </div>
+            </div>
+            <div class = "contact-footer">
+                <h3>Follow Us</h3>
+                <div class = "social-links">
+                  <a href = "#" class = "fab fa-facebook-f"></a>
+                  <a href = "#" class = "fab fa-twitter"></a>
+                  <a href = "#" class = "fab fa-instagram"></a>
+                  <a href = "#" class = "fab fa-linkedin"></a>
+                  <a href = "#" class = "fab fa-youtube"></a>
+                </div>
+              </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
