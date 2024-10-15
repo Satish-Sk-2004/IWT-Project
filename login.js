@@ -22,7 +22,7 @@ signUpButton.addEventListener("click", (event) => {
   if (!name || !email || !password) {
     alert("All fields must be filled out!");
   } else {
-    window.location.href = "homepage.html"; // proceed with form submission
+    window.location.href = "index.html"; // proceed with form submission
   }
 });
 
@@ -34,6 +34,6 @@ signInButton.addEventListener("click", (event) => {
   if (!email || !password) {
     alert("All fields must be filled out!");
   } else {
-    window.location.href = "homepage.html"; // proceed with sign-in logic
+    window.location.href = "index.html"; // proceed with sign-in logic
   }
 });
