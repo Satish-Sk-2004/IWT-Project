@@ -18,11 +18,14 @@ signUpButton.addEventListener("click", (event) => {
   const name = document.querySelector('.sign-up input[placeholder="Name"]').value.trim();
   const email = document.querySelector('.sign-up input[placeholder="Email"]').value.trim();
   const password = document.querySelector('.sign-up input[placeholder="Password"]').value.trim();
+  const phone = document.querySelector('.sign-up input[placeholder="Phone Number"]').value.trim();
+  const gender = document.querySelector('.sign-up input[name="gender"]:checked')?.value;
+  const terms = document.querySelector('#terms').checked;
 
-  if (!name || !email || !password) {
-    alert("All fields must be filled out!");
+  if (!name || !email || !password || !phone || !gender || !terms) {
+    alert("All fields must be filled out and terms accepted!");
   } else {
-    window.location.href = "homepage.html"; // proceed with form submission
+    window.location.href = "index.html"; // proceed with form submission
   }
 });
 
@@ -34,6 +37,6 @@ signInButton.addEventListener("click", (event) => {
   if (!email || !password) {
     alert("All fields must be filled out!");
   } else {
-    window.location.href = "homepage.html"; // proceed with sign-in logic
+    window.location.href = "index.html"; // proceed with sign-in logic
   }
 });

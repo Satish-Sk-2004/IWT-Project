@@ -1,47 +1,48 @@
-// Get elements
-const addStudentBtn = document.getElementById('addStudentBtn');
-const overlayForm = document.getElementById('overlayForm');
-const closeBtn = document.getElementById('closeBtn');
-const studentForm = document.getElementById('studentForm');
-const studentTable = document.getElementById('studentTable').querySelector('tbody');
+document.addEventListener('DOMContentLoaded', function() {
+    const addStudentBtn = document.getElementById('addStudentBtn');
+    const overlayForm = document.getElementById('overlayForm');
+    const closeBtn = document.getElementById('closeBtn');
+    const studentForm = document.getElementById('studentForm');
 
-// Function to open overlay form
-addStudentBtn.addEventListener('click', () => {
-    overlayForm.style.display = 'flex';  // Show overlay
-});
+    addStudentBtn.addEventListener('click', function() {
+        overlayForm.style.display = 'block';
+    });
 
-// Function to close overlay form
-closeBtn.addEventListener('click', () => {
-    overlayForm.style.display = 'none';  // Hide overlay
-});
+    closeBtn.addEventListener('click', function() {
+        overlayForm.style.display = 'none';
+    });
 
-// Handle form submission
-studentForm.addEventListener('submit', (e) => {
-    e.preventDefault();  // Prevent page reload
+    studentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const student = {
+            name: document.getElementById('name').value,
+            studentId: document.getElementById('studentId').value,
+            gender: document.getElementById('gender').value,
+            email: document.getElementById('email').value,
+            year: document.getElementById('year').value
+        };
+        addStudent(student);
+        overlayForm.style.display = 'none';
+        studentForm.reset();
+    });
 
-    // Get form values
-    const name = document.getElementById('name').value;
-    const studentId = document.getElementById('studentId').value;
-    const gender = document.getElementById('gender').value;
-    const email = document.getElementById('email').value;
-    const year = document.getElementById('year').value;
+    function addStudent(student) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${student.name}</td>
+            <td>${student.studentId}</td>
+            <td>${student.gender}</td>
+            <td>${student.email}</td>
+            <td>${student.year}</td>
+            <td>View</td>
+        `;
+        
+        // Add click event listener to the row
+        row.addEventListener('click', function() {
+            // Redirect to achievements.html with student ID as a parameter
+            window.location.href = `achievements.html?studentId=${student.studentId}`;
+        });
 
-    // Create a new row in the table
-    const row = document.createElement('tr');
-    row.innerHTML = `
-        <td>${name}</td>
-        <td>${studentId}</td>
-        <td>${gender}</td>
-        <td>${email}</td>
-        <td>${year}</td>
-    `;
-
-    // Add the row to the table
-    studentTable.appendChild(row);
-
-    // Clear form fields
-    studentForm.reset();
-
-    // Hide the overlay form
-    overlayForm.style.display = 'none';
+        document.querySelector('#studentTable tbody').appendChild(row);
+    }
 });

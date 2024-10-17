@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievement Document Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #addAchievement {
+            background-color: #2a4d78;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #addAchievement:hover {
+            background-color: #39669e;
+        }
+
+        #documentList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .document-item {
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .document-name {
+            font-weight: bold;
+            color: #0066cc;
+            cursor: pointer;
+        }
+        .document-description {
+            margin-top: 5px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Achievement Document Viewer</h1>
+    <button id="addAchievement">Add Achievement</button>
+    <input type="file" id="fileInput" style="display: none;">
+    <h2>Documents:</h2>
+    <ul id="documentList"></ul>
+
+    <script>
+        const addAchievementBtn = document.getElementById('addAchievement');
+        const fileInput = document.getElementById('fileInput');
+        const documentList = document.getElementById('documentList');
+        
+        let documents = [];
+
+        addAchievementBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const description = prompt("Enter a description for this document:");
+                const fileURL = URL.createObjectURL(file);
+                documents.push({
+                    name: file.name,
+                    description: description || "No description provided",
+                    url: fileURL
+                });
+                updateDocumentList();
+            }
+        });
+
+        function updateDocumentList() {
+            documentList.innerHTML = '';
+            documents.forEach((doc) => {
+                const li = document.createElement('li');
+                li.className = 'document-item';
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'document-name';
+                nameSpan.textContent = doc.name;
+                nameSpan.addEventListener('click', () => openDocument(doc.url));
+                
+                const descriptionDiv = document.createElement('div');
+                descriptionDiv.className = 'document-description';
+                descriptionDiv.textContent = doc.description;
+                
+                li.appendChild(nameSpan);
+                li.appendChild(descriptionDiv);
+                documentList.appendChild(li);
+            });
+        }
+
+        function openDocument(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

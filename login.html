@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <script defer src="login.js"></script>
-    <title>Animated Login and Registration Form</title>
+    <title>Login Form</title>
   </head>
   <body>
     <div class="container" id="container">
@@ -16,13 +19,38 @@
           <div class="social_icons">
             <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
             <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-x"></i></a>
             <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
           </div>
           <span>Or use your email for registration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <input type="tel" placeholder="Phone Number" required />
+          
+          <div class="gender-container">
+            <label>Gender:</label>
+            <div class="gender-options">
+              <div class="gender-option">
+                <input type="radio" name="gender" value="Male" id="male" required>
+                <label for="male">Male</label>
+              </div>
+              <div class="gender-option">
+                <input type="radio" name="gender" value="Female" id="female" required>
+                <label for="female">Female</label>
+              </div>
+              <div class="gender-option">
+                <input type="radio" name="gender" value="Other" id="other" required>
+                <label for="other">Other</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="terms">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the Terms & Conditions</label>
+          </div>
+
           <a class="signbutton" href="index.html">Sign Up</a>
         </form>
       </div>
@@ -37,8 +65,16 @@
             <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
           </div>
           <span>or use your email & password</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+
+          <!-- Dropdown for selecting role -->
+          <select name="role" id="role" required>
+            <option value="" disabled selected>Select Role</option>
+            <option value="teacher">Teacher</option>
+            <option value="incharger">Incharger</option>
+          </select>
+
           <a class="signbutton" href="index.html">Sign In</a>
         </form>
       </div>

@@ -5,17 +5,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  padding: 20px;
   background-color: #c9d6ff;
   background: linear-gradient(to right, #e2e2e2, #c9d6ff);
   font-family: "poppins", sans-serif;
 }
+
 .container {
   background-image: url(./images/background.jpg);
   border-radius: 30px;
@@ -25,32 +27,62 @@ body {
   min-height: 480px;
   overflow: hidden;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.container p {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.3px;
-  margin: 20px 0;
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  overflow-y: auto;
+  max-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.container span {
-  font-size: 12px;
-}
-.icon {
-  text-decoration: none;
-  color: #333;
-  margin: 15px 0 10px;
-  font-size: 13px;
-}
+
 .container form {
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 40px;
+  padding: 40px;
   height: 100%;
 }
-.container form input {
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.icon {
+  text-decoration: none;
+  color: #333;
+  margin: 15px 0 10px;
+  font-size: 13px;
+}
+
+.container form input:not([type="radio"]):not([type="checkbox"]),
+.container form select {
   background-color: #eee;
   border: none;
   width: 100%;
@@ -58,11 +90,12 @@ body {
   padding: 10px 15px;
   font-size: 13px;
   outline: none;
-  width: 100%;
   border-radius: 8px;
   font-family: inherit;
 }
-.container button , .signbutton{
+
+.container button,
+.signbutton {
   background-color: #6e64ed;
   color: #fff;
   padding: 10px 45px;
@@ -75,19 +108,16 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
+
 .container button.hidden {
   background-color: transparent;
   border-color: #fff;
 }
-.form-container {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  transition: all 0.6s ease-in-out;
-}
+
 .social_icons {
   margin: 20px 0;
 }
+
 .social_icons a {
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -98,26 +128,31 @@ body {
   width: 40px;
   height: 40px;
 }
+
 .sign-in {
   left: 0;
   width: 50%;
   z-index: 2;
 }
+
 .container.active .sign-in {
   transform: translateX(100%);
 }
+
 .sign-up {
   left: 0;
   width: 50%;
   z-index: 1;
   opacity: 0;
 }
+
 .container.active .sign-up {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
-  animation: move 0.6;
+  animation: move 0.6s;
 }
+
 @keyframes move {
   0%,
   49.99% {
@@ -130,6 +165,7 @@ body {
     z-index: 5;
   }
 }
+
 .toggle-container {
   position: absolute;
   top: 0;
@@ -140,9 +176,11 @@ body {
   transition: all 0.6s ease-in-out;
   z-index: 100;
 }
+
 .container.active .toggle-container {
   transform: translateX(-100%);
 }
+
 .toggle {
   background: url("../img/bg.jpg");
   background-size: cover;
@@ -156,6 +194,7 @@ body {
   transition: all 0.6s ease-in-out;
   position: relative;
 }
+
 .toggle::before {
   position: absolute;
   content: "";
@@ -163,9 +202,11 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.15);
 }
+
 .container.active .toggle {
   transform: translateX(50%);
 }
+
 .toggle-panel {
   position: absolute;
   width: 50%;
@@ -179,16 +220,111 @@ body {
   transform: translateX(0);
   transition: all 0.6s ease-in-out;
 }
+
 .toggle-left {
   transform: translateX(-200%);
 }
+
 .container.active .toggle-left {
   transform: translateX(0);
 }
+
 .toggle-right {
   right: 0;
   transform: translateX(0);
 }
+
 .container.active .toggle-right {
-  transform: translateX(0);
+  transform: translateX(200%);
+}
+
+.gender-container {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.gender-container label {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.gender-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+}
+
+.gender-option input[type="radio"] {
+  margin-right: 5px;
+}
+
+.terms {
+  margin: 15px 0;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.terms input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Dropdown style */
+select#role {
+  background-color: #eee;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: auto;
+  }
+
+  .form-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .toggle-container {
+    display: none;
+  }
+
+  .sign-in,
+  .sign-up {
+    width: 100%;
+    position: relative;
+    opacity: 1;
+    transform: none;
+  }
+
+  .container.active .sign-in,
+  .container.active .sign-up {
+    transform: none;
+  }
+
+  .gender-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gender-option {
+    margin-bottom: 5px;
+  }
 }

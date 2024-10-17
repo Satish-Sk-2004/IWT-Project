@@ -1,3 +1,21 @@
+function loadFacultyMembersOnHomepage() {
+    const facultyGrid = document.querySelector('.faculty-grid');
+    const facultyMembers = JSON.parse(localStorage.getItem('facultyMembers')) || [];
+
+    facultyMembers.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'faculty-card';
+        card.innerHTML = `
+            <a href="students.html">
+                <img src="${member.photoUrl}" alt="${member.name}">
+                <h3>${member.name}</h3>
+            </a>
+        `;
+        facultyGrid.appendChild(card);
+    });
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -32,4 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     gsap.from(".contact-info div", { opacity: 0, y: 50, duration: 1, ease: "power3.out", stagger: 0.2, scrollTrigger: ".contact-info" });
     gsap.from(".contact-form", { opacity: 0, x: -100, duration: 1, ease: "power3.out", scrollTrigger: ".contact-form" });
+
+    loadFacultyMembersOnHomepage();
 });

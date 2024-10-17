@@ -33,7 +33,7 @@ th {
 
 /* Styling for buttons */
 .btn {
-    background-color: #4CAF50;
+    background-color: #2a4d78;
     color: white;
     padding: 10px 20px;
     margin: 10px 0;
@@ -44,7 +44,7 @@ th {
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #39669e;
 }
 
 /* Overlay form styling */
